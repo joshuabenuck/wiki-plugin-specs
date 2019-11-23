@@ -1,0 +1,29 @@
+{
+  "name": "wiki-plugin-specs",
+  "version": "0.0.1",
+  "description": "Federated Wiki - Specs Plugin",
+  "keywords": [
+    "specs",
+    "wiki",
+    "federated wiki",
+    "plugin"
+  ],
+  "author": {
+    "name": "Joshua Benuck",
+    "url": "https://github.com/joshuabenuck"
+  },
+  "contributors": [],
+  "devDependencies": {},
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshuabenuck/wiki-plugin-specs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshuabenuck/wiki-plugin-specs/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {}
+}
