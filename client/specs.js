@@ -55,16 +55,24 @@ const parse = (text) => {
 
 // If there are .server-source's in the DOM, this will only be calleed
 // once they have been initialized.
-const emit = ($item, item) => {
+function emit($item, item) {
   $item.addClass('output-item')
   $item.dblclick(() => {
     return wiki.textEditor($item, item);
   });
 };
 
-const bind = ($item, item) => {
+function parse(text) {
+  let lines = text.split('\n')
+  if (lines.length > 0) {
+    return lines[0]
+  }
+  ''
+}
+
+function bind($item, item) {
   console.log('spec', item)
-  $item.append(item.text)
+  $item.append(parse(item.text))
 }
 
 if (typeof window !== "undefined" && window !== null) {
