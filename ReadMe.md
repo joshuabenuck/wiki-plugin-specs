@@ -1,6 +1,6 @@
-# Federated Wiki - Compare Plugin
+# Federated Wiki - Specs Plugin
 
-This plugin, type: compare, allows one to compare multiple specs.
+This plugin, type: specs, allows one to record properties of an object. It is meant to be used with the compare plugin.
 
 ## Build
 
