@@ -65,7 +65,10 @@ function emit($item, item) {
 function parse(text) {
   let lines = text.split('\n')
   if (lines.length > 0) {
-    return lines[0]
+    if (lines[0].indexOf(':') == -1) {
+      return 'Error parsing property'
+    }
+    return lines[0].split(':')[1]
   }
   ''
 }
