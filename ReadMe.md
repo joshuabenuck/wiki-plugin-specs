@@ -23,6 +23,15 @@ When rendered, only the value of the `name` property is displayed. The remaining
 
 ![Rendered view](screenshots/summary.png)
 
+If an `IMAGE` property is specified, the collapsed view of the `specs` item will include an inlined version of the image.
+
+Use `HEIGHT` to control how large the inlined image is. The default is `50px`.
+
+```
+IMAGE: https://example.com/some_image.png
+HEIGHT: 50px
+```
+
 See the [compare plugin](https://github.com/joshuabenuck/wiki-plugin-compare) to learn how to compare the properties of one or more `specs` items.
 
 ## Build

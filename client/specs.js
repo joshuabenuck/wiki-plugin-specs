@@ -64,18 +64,40 @@ function emit($item, item) {
 
 function parse(text) {
   let lines = text.split('\n')
-  if (lines.length > 0) {
-    if (lines[0].indexOf(':') == -1) {
-      return 'Error parsing property'
+  let summary = undefined
+  let image = undefined
+  let height = '50px'
+  for (line of lines) {
+    if (!summary) {
+      summary='Error parsing property'
+      if (line.indexOf(':') != -1) {
+        summary = line.split(':')[1]
+      }
+      continue
     }
-    return lines[0].split(':')[1]
+    if (line.indexOf('IMAGE:') == 0) {
+      image = line.substring('IMAGE:'.length, line.length)
+    }
+    if (line.indexOf('HEIGHT:') == 0) {
+      height = line.substring('HEIGHT:'.length, line.length)
+    }
   }
-  ''
+  return { summary, image, height }
 }
 
 function bind($item, item) {
   console.log('spec', item)
-  $item.append(parse(item.text))
+  let info = parse(item.text)
+  if (info.image) {
+    $('<img>')
+      .attr('src', info.image)
+      .css('display', 'inline')
+      .css('height', info.height)
+      .appendTo($item)
+  }
+  if (info.summary) {
+    $('<span>').text(info.summary).appendTo($item)
+  }
 }
 
 if (typeof window !== "undefined" && window !== null) {
